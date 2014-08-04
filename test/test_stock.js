@@ -1,4 +1,4 @@
-/* globals describe, it */
+/* globals describe, it, done */
 
 'use strict';
 
