@@ -4,7 +4,8 @@
   "description": "stock-market ============",
   "main": "app/index.js",
   "scripts": {
-    "test": "mocha test --recursive -R spec"
+    "test": "mocha test --recursive -R spec",
+    "coveralls": "./node_modules/mocha/bin/mocha test --recursive -r blanket -R mocha-lcov-reporter | coveralls"
   },
   "repository": {
     "type": "git",
@@ -16,10 +17,16 @@
     "url": "https://github.com/jjsub/stock-market/issues"
   },
   "homepage": "https://github.com/jjsub/stock-market",
+  "config": {
+    "blanket": {
+      "pattern": "/app/"
+    }
+  },
   "dependencies": {
     "request": "^2.39.0"
   },
   "devDependencies": {
+    "blanket": "^1.1.6",
     "chai": "^1.9.1",
     "coveralls": "^2.11.1",
     "grunt": "^0.4.5",
